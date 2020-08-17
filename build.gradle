@@ -29,6 +29,7 @@ protobuf {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.5.5.RELEASE'
     implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '2.6.0'
     implementation 'com.google.protobuf:protobuf-java:3.11.0'
 
