@@ -51,14 +51,12 @@ public class PersonSerde implements Serializer<PersonProto.Person>,
 
     @Override
     public PersonProto.Person deserialize(String topic, byte[] data) {
-        PersonProto.Person person = null;
         try {
-            person = personParser.parseFrom(data);
+            return personParser.parseFrom(data);
         } catch (InvalidProtocolBufferException e) {
             log.error(e.toString());
+            return null;
         }
-
-        return person;
     }
 
     @Override
