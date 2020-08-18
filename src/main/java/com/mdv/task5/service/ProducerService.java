@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class ProducerService {
-    private final KafkaTemplate<String, byte[]> kafkaTemplate;
+    private final KafkaTemplate<String, PersonProto.Person> kafkaTemplate;
 
     private final String TOPIC = "test";
 
     public void sendPerson(PersonProto.Person person) {
-        kafkaTemplate.send(TOPIC, person.toByteArray());
+        kafkaTemplate.send(TOPIC, person);
     }
 }
